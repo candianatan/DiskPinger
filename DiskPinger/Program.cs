@@ -8,27 +8,46 @@ namespace DiskPinger
 {
     class ReadFromFile
     {
+        public const string path = @"D:\Ping.txt";
+        public const int minDelay = 500;
+        public static DateTime startTime = DateTime.Now;
         static void Main()
         {
             // Solicito el delay deseado
             int time = AskForDelay();
-
             var stopwatch = Stopwatch.StartNew();
             int pings = 0;
             Console.WriteLine("Delay set to " + time);
             Console.WriteLine("Iniciando pings");
+            startTime = DateTime.Now;
 
             while (true)
             {
+                Console.WriteLine("Start time: " + startTime.ToString());
+
                 Ping();
                 pings++;
+                Escribir();
                 Console.WriteLine("Ping number " + pings);
-                Thread.Sleep(time);
+                //Console.WriteLine("Elapsed time: " + DateTime.Now.Subtract(startTime).ToString());
+                // Get the elapsed time as a TimeSpan value.
+                TimeSpan ts = stopwatch.Elapsed;
+
+                // Format and display the TimeSpan value.
+                string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                    ts.Hours, ts.Minutes, ts.Seconds,
+                    ts.Milliseconds / 10);
+                Console.WriteLine("Tiempo de ejecución: " + elapsedTime);
+
                 stopwatch.Stop();
+                Thread.Sleep(time);
+
                 //Console.WriteLine(stopwatch.ElapsedMilliseconds);
                 //Console.WriteLine(DateTime.Now.ToLongTimeString());
-                
+
                 stopwatch = Stopwatch.StartNew();
+                Console.Clear();
+
             }
         }
 
@@ -52,16 +71,16 @@ namespace DiskPinger
                 {
                     // Si entry no es "" procedo a convertir el string a entero
                     // return Convert.ToInt32(entry);
-                    // Si el valor ingresado es menor a 1000ms solicito uno más grande
-                    if (Convert.ToInt32(entry) < 1000)
+                    // Si el valor ingresado es menor a minDelay ms solicito uno más grande
+                    if (Convert.ToInt32(entry)*1000 < minDelay)
                     {
-                        Console.WriteLine("El delay mínimo es de 1 segundo (1000ms). Por favor ingrese un nuevo valor:");
+                        Console.WriteLine("El delay mínimo es de " + minDelay/1000 + " segundos. Por favor ingrese un nuevo valor:");
                         AskForDelay();
                     }
                     else
                     {
-                        Console.WriteLine("aceptado valor " + entry);
-                        return Convert.ToInt32(entry);
+                        Console.WriteLine("aceptado valor " + (Convert.ToInt32(entry) * 1000));
+                        return (Convert.ToInt32(entry) * 1000);
                     }
                 }
 
@@ -102,7 +121,7 @@ namespace DiskPinger
             // Read the file as one string.
             try
             {
-                string text = System.IO.File.ReadAllText(@"D:\Ping.txt");
+                string text = System.IO.File.ReadAllText(path);
             }
             catch (IOException e)
             {
@@ -112,6 +131,17 @@ namespace DiskPinger
 
             // Display the file contents to the console. Variable text is a string.
             //System.Console.WriteLine("Contents of WriteText.txt = {0}", text);
+        }
+
+        static void Escribir()
+        {
+            // Este método escribe la fecha y hora actual al archivo "path" para generar actividad en el disco
+            using (System.IO.StreamWriter file =
+            new System.IO.StreamWriter(path, true))
+            {
+                file.WriteLine(DateTime.Now.ToLongTimeString());
+            }
+            Console.WriteLine(DateTime.Now.ToLongTimeString());
         }
     }
 }
