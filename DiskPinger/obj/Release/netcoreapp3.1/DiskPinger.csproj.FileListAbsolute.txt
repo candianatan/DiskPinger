@@ -1,0 +1,14 @@
+C:\Users\Nath\source\repos\DiskPinger\DiskPinger\bin\Release\netcoreapp3.1\DiskPinger.exe
+C:\Users\Nath\source\repos\DiskPinger\DiskPinger\bin\Release\netcoreapp3.1\Program.cs
+C:\Users\Nath\source\repos\DiskPinger\DiskPinger\bin\Release\netcoreapp3.1\DiskPinger.deps.json
+C:\Users\Nath\source\repos\DiskPinger\DiskPinger\bin\Release\netcoreapp3.1\DiskPinger.runtimeconfig.json
+C:\Users\Nath\source\repos\DiskPinger\DiskPinger\bin\Release\netcoreapp3.1\DiskPinger.runtimeconfig.dev.json
+C:\Users\Nath\source\repos\DiskPinger\DiskPinger\bin\Release\netcoreapp3.1\DiskPinger.dll
+C:\Users\Nath\source\repos\DiskPinger\DiskPinger\bin\Release\netcoreapp3.1\DiskPinger.pdb
+C:\Users\Nath\source\repos\DiskPinger\DiskPinger\obj\Release\netcoreapp3.1\DiskPinger.csproj.CoreCompileInputs.cache
+C:\Users\Nath\source\repos\DiskPinger\DiskPinger\obj\Release\netcoreapp3.1\DiskPinger.AssemblyInfoInputs.cache
+C:\Users\Nath\source\repos\DiskPinger\DiskPinger\obj\Release\netcoreapp3.1\DiskPinger.AssemblyInfo.cs
+C:\Users\Nath\source\repos\DiskPinger\DiskPinger\obj\Release\netcoreapp3.1\DiskPinger.dll
+C:\Users\Nath\source\repos\DiskPinger\DiskPinger\obj\Release\netcoreapp3.1\DiskPinger.pdb
+C:\Users\Nath\source\repos\DiskPinger\DiskPinger\obj\Release\netcoreapp3.1\DiskPinger.genruntimeconfig.cache
+C:\Users\Nath\source\repos\DiskPinger\DiskPinger\obj\Release\netcoreapp3.1\DiskPinger.csprojAssemblyReference.cache

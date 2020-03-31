@@ -11,3 +11,4 @@ C:\Users\Nath\source\repos\DiskPinger\DiskPinger\bin\Debug\netcoreapp3.1\DiskPin
 C:\Users\Nath\source\repos\DiskPinger\DiskPinger\obj\Debug\netcoreapp3.1\DiskPinger.dll
 C:\Users\Nath\source\repos\DiskPinger\DiskPinger\obj\Debug\netcoreapp3.1\DiskPinger.pdb
 C:\Users\Nath\source\repos\DiskPinger\DiskPinger\obj\Debug\netcoreapp3.1\DiskPinger.genruntimeconfig.cache
+C:\Users\Nath\source\repos\DiskPinger\DiskPinger\obj\Debug\netcoreapp3.1\DiskPinger.csprojAssemblyReference.cache
